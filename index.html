@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boyne Geospatial — GIS Consulting</title>
+  <meta name="description" content="Boyne Geospatial is a professional GIS consultancy based in Ireland, delivering precision mapping and spatial analysis for government, environmental, and infrastructure sectors.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Boyne Geospatial home">
+        <img src="BOYNE (1).png" alt="Boyne Geospatial">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="btn-primary">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg" style="background-image: url('images/hero/DJI_0718.JPG');"></div>
+
+    <!-- Animated coordinate grid overlay -->
+    <svg class="hero-grid-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+          <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#1A8C7D" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" opacity="0.06"/>
+      <!-- Horizontal accent lines -->
+      <line x1="0" y1="25%" x2="100%" y2="25%" stroke="#1A8C7D" stroke-width="0.5" opacity="0.12"/>
+      <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#1A8C7D" stroke-width="0.5" opacity="0.12"/>
+      <line x1="0" y1="75%" x2="100%" y2="75%" stroke="#1A8C7D" stroke-width="0.5" opacity="0.12"/>
+      <!-- Vertical accent lines -->
+      <line x1="33%" y1="0" x2="33%" y2="100%" stroke="#1A8C7D" stroke-width="0.5" opacity="0.08"/>
+      <line x1="66%" y1="0" x2="66%" y2="100%" stroke="#1A8C7D" stroke-width="0.5" opacity="0.08"/>
+    </svg>
+
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tagline-chip animate-hero delay-1">
+          GIS Consultancy &nbsp;·&nbsp; Ireland
+        </span>
+        <h1 class="hero-heading animate-hero delay-2">Precision Mapping</h1>
+        <p class="hero-heading-gold animate-hero delay-3">Actionable Insight</p>
+        <p class="hero-sub animate-hero delay-4">
+          Spatial intelligence that drives informed decisions — from terrain surveys
+          to infrastructure analysis, we turn complex geographic data into clear,
+          actionable maps.
+        </p>
+        <div class="hero-ctas animate-hero delay-5">
+          <a href="services.html" class="btn-primary">Our Services</a>
+          <a href="tools.html" class="btn-outline">View Tools</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services Strip ────────────────────────────────────── -->
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <span class="section-label reveal">What We Do</span>
+      <h2 class="section-title reveal" id="services-heading">Core GIS Services</h2>
+      <p class="section-body reveal">
+        From data collection in the field to polished cartographic outputs,
+        we provide end-to-end spatial solutions tailored to your project.
+      </p>
+      <div class="services-grid reveal-stagger">
+        <!-- Card 1 -->
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="40" height="40" rx="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 16h40M4 32h40M16 4v40M32 4v40" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+            <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="2" fill="currentColor"/>
+          </svg>
+          <h3>GIS Mapping</h3>
+          <p>Topographic and thematic mapping at any scale. We produce precise, publication-quality maps for planning, reporting, and spatial communication.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 36L20 20l8 10 6-8 6 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="14" cy="16" r="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <h3>Spatial Analysis</h3>
+          <p>Site suitability, land-use assessment, and spatial data processing. We extract meaning from complex datasets to support evidence-based decisions.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M24 4L44 36H4L24 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M24 4L24 36" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+            <path d="M14 24h20" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+            <circle cx="24" cy="28" r="2" fill="currentColor"/>
+          </svg>
+          <h3>Map Production</h3>
+          <p>Custom cartographic outputs for print and digital delivery — infrastructure maps, planning exhibits, environmental reports, and public-facing web maps.</p>
+        </div>
+      </div>
+      <div style="margin-top: 2.5rem; reveal">
+        <a href="services.html" class="btn-outline reveal">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About Teaser ───────────────────────────────────────── -->
+  <section class="section" style="background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-teaser">
+        <div class="about-teaser-img reveal">
+          <img src="images/fieldwork/DJI_0709.JPG"
+               alt="Overhead drone survey of an ancient ringfort site in Co. Meath, Ireland"
+               loading="lazy">
+        </div>
+        <div class="about-teaser-text">
+          <span class="section-label reveal">About Us</span>
+          <h2 class="section-title reveal" id="about-heading">Ireland's Spatial Intelligence Partner</h2>
+          <p class="reveal">
+            Boyne Geospatial is a professional GIS consultancy operating across Ireland and internationally.
+            We combine deep technical expertise in spatial data with a practical understanding of
+            the sectors we serve — government, environmental, infrastructure, and land development.
+          </p>
+          <p class="reveal">
+            Our work ranges from UAV survey and remote sensing to advanced spatial modelling and
+            bespoke cartographic production — always with precision, clarity, and purpose.
+          </p>
+          <a href="about.html" class="btn-outline reveal">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Tools Preview ─────────────────────────────────────── -->
+  <section class="section" aria-labelledby="tools-heading">
+    <div class="container">
+      <span class="section-label reveal">Free Tools</span>
+      <h2 class="section-title reveal" id="tools-heading">Spatial Tools for Professionals</h2>
+      <p class="section-body reveal">
+        Browser-based GIS utilities built for spatial professionals — no installation required.
+      </p>
+      <div class="tools-grid reveal-stagger">
+        <!-- GeoPackage Viewer -->
+        <div class="tool-card">
+          <div class="tool-thumb">
+            <svg class="tool-thumb-placeholder" width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M6 18h36" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M18 10v8M30 10v8" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="14" cy="28" r="3" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M22 28h10M22 32h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="tool-info">
+            <div class="tool-tags">
+              <span class="tool-tag">GIS</span>
+              <span class="tool-tag">Data</span>
+              <span class="tool-tag">Viewer</span>
+            </div>
+            <h3>GeoPackage Viewer</h3>
+            <p>Upload and inspect GeoPackage (.gpkg) files directly in your browser — no desktop GIS software needed.</p>
+            <a href="tools.html" class="btn-launch">Launch Tool</a>
+          </div>
+        </div>
+        <!-- Placeholder: more tools coming -->
+        <div class="tool-card">
+          <div class="tool-thumb">
+            <svg class="tool-thumb-placeholder" width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M24 6v4M24 38v4M6 24h4M38 24h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="7" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="24" cy="24" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="tool-info">
+            <div class="tool-tags">
+              <span class="tool-tag">Coming Soon</span>
+            </div>
+            <h3>More Tools</h3>
+            <p>Additional spatial tools are in development. Visit the tools page to see what's available and check back for updates.</p>
+            <a href="tools.html" class="btn-launch">View All Tools</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ────────────────────────────────────────── -->
+  <section class="cta-banner" aria-labelledby="cta-heading">
+    <div class="container">
+      <span class="section-label section-label-gold reveal">Get Started</span>
+      <h2 class="section-title reveal" id="cta-heading">Ready to Start a Project?</h2>
+      <p class="reveal">
+        Tell us about your spatial challenge. We'll respond within one working day.
+      </p>
+      <a href="contact.html" class="btn-primary reveal">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <a href="index.html" aria-label="Boyne Geospatial home">
+            <img src="BOYNE (1).png" alt="Boyne Geospatial">
+          </a>
+          <p>Professional GIS consultancy delivering precision mapping and spatial analysis across Ireland.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Navigation</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul role="list">
+            <li>Ireland</li>
+            <li>conor@boynegeospatial.ie</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Boyne Geospatial. All rights reserved.</p>
+        <span>53.7°N 6.5°W</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

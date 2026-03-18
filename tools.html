@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools — Boyne Geospatial</title>
+  <meta name="description" content="Free browser-based GIS tools built by Boyne Geospatial for spatial professionals — no installation required.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Boyne Geospatial home">
+        <img src="BOYNE (1).png" alt="Boyne Geospatial">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="btn-primary">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ─────────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="container">
+      <span class="page-hero-label">Free to Use</span>
+      <h1 class="page-hero-title">Spatial Tools</h1>
+      <p class="page-hero-sub">
+        Browser-based GIS utilities built for spatial professionals.
+        No installation, no sign-up — just open and use.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Tools Grid ────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="tools-heading">
+    <div class="container">
+      <h2 class="section-title reveal" id="tools-heading">Available Tools</h2>
+      <p class="section-body reveal">
+        Click <strong style="color: var(--color-teal-light);">Launch Tool</strong> to open any tool
+        in an embedded panel below. Tools run entirely in your browser.
+      </p>
+
+      <!--
+        ╔══════════════════════════════════════════════════════╗
+        ║  TO ADD A NEW TOOL:                                  ║
+        ║  1. Copy one of the .tool-card blocks below         ║
+        ║  2. Set data-embed="https://your-tool-url.com"      ║
+        ║  3. Update the title, description, and tags         ║
+        ╚══════════════════════════════════════════════════════╝
+      -->
+      <div class="tools-grid reveal-stagger">
+
+        <!-- ── Tool: GeoPackage Viewer ─────────────────────── -->
+        <div class="tool-card" data-embed="https://conorpg12.github.io/GeopackageViewer/">
+          <div class="tool-thumb">
+            <svg class="tool-thumb-placeholder" width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M6 18h36" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M18 10v8M30 10v8" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="14" cy="28" r="3" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M22 28h10M22 32h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="tool-info">
+            <div class="tool-tags">
+              <span class="tool-tag">GIS</span>
+              <span class="tool-tag">Data</span>
+              <span class="tool-tag">Viewer</span>
+            </div>
+            <h3>GeoPackage Viewer</h3>
+            <p>
+              Upload and inspect GeoPackage (.gpkg) files directly in your browser.
+              View layers, attributes, and geometry — no desktop GIS software needed.
+            </p>
+            <button class="btn-launch" onclick="launchTool(this)" aria-label="Launch GeoPackage Viewer">
+              ▶ &nbsp;Launch Tool
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Placeholder: Next Tool ──────────────────────── -->
+        <!-- To add your next tool: replace data-embed, title, description, and tags below -->
+        <div class="tool-card" data-embed="https://conorpg12.github.io/ThereseBirthday/">
+          <div class="tool-thumb">
+            <svg class="tool-thumb-placeholder" width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M24 14v10l7 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 24h4M38 24h4M24 6v4M24 38v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="tool-info">
+            <div class="tool-tags">
+              <span class="tool-tag">Coming Soon</span>
+            </div>
+            <h3>Next Tool</h3>
+            <p>
+              Test.
+            </p>
+            <button class="btn-launch" onclick="launchTool(this)" aria-label="Coming soon">
+              ▶ &nbsp;Launch Tool
+            </button>
+          </div>
+        </div>
+
+           <div class="tool-card" data-embed="https://conorpg12.github.io/ThereseBirthday/">
+          <div class="tool-thumb">
+            <svg class="tool-thumb-placeholder" width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M24 14v10l7 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 24h4M38 24h4M24 6v4M24 38v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="tool-info">
+            <div class="tool-tags">
+              <span class="tool-tag">Coming Soon</span>
+            </div>
+            <h3>Next Tool</h3>
+            <p>
+              Test.
+            </p>
+            <button class="btn-launch" onclick="launchTool(this)" aria-label="Coming soon">
+              ▶ &nbsp;Coming Soon
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /.tools-grid -->
+
+      <!-- ── Tool Embed Container ──────────────────────────── -->
+      <div class="tool-embed-container" id="tool-embed-container" role="region" aria-live="polite">
+        <div class="tool-embed-header">
+          <span class="tool-embed-title" id="tool-embed-title">Tool</span>
+          <button class="btn-close-embed" onclick="closeEmbed()" aria-label="Close tool">✕</button>
+        </div>
+        <iframe
+          id="tool-iframe"
+          src=""
+          allow="fullscreen"
+          title="Embedded GIS tool"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ────────────────────────────────────────── -->
+  <section class="cta-banner" aria-labelledby="tools-cta">
+    <div class="container">
+      <span class="section-label section-label-gold reveal">Suggest a Tool</span>
+      <h2 class="section-title reveal" id="tools-cta">Need a Specific Tool?</h2>
+      <p class="reveal">
+        If there's a spatial workflow you'd like to see automated, let us know.
+        We're always building new utilities for the GIS community.
+      </p>
+      <a href="contact.html" class="btn-primary reveal">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <a href="index.html" aria-label="Boyne Geospatial home">
+            <img src="BOYNE (1).png" alt="Boyne Geospatial">
+          </a>
+          <p>Professional GIS consultancy delivering precision mapping and spatial analysis across Ireland.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Navigation</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul role="list">
+            <li>Ireland</li>
+            <li>conor@boynegeospatial.ie</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Boyne Geospatial. All rights reserved.</p>
+        <span>53.7°N 6.5°W</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

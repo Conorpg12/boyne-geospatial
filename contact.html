@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Boyne Geospatial</title>
+  <meta name="description" content="Get in touch with Boyne Geospatial to discuss your GIS project requirements.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Boyne Geospatial home">
+        <img src="BOYNE (1).png" alt="Boyne Geospatial">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="btn-primary">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ─────────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="container">
+      <span class="page-hero-label">Get in Touch</span>
+      <h1 class="page-hero-title">Contact Us</h1>
+      <p class="page-hero-sub">
+        Tell us about your project and we'll get back to you within one working day.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Contact Form ───────────────────────────────────────── -->
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <div>
+          <h2 class="section-title reveal" id="contact-heading">Send a Message</h2>
+          <p class="reveal" style="color: var(--color-muted); margin-bottom: 2rem;">
+            Use the form below to outline your requirements. The more detail you can provide,
+            the better we can tailor our response.
+          </p>
+
+          <!--
+            Formspree handles the form submission — no backend needed.
+            Form submissions are sent to conor@boynegeospatial.ie via Formspree.
+          -->
+          <form
+            class="contact-form reveal"
+            action="https://formspree.io/conor@boynegeospatial.ie"
+            method="POST"
+            novalidate
+          >
+            <div class="form-group">
+              <label for="name">Full Name <span style="color: var(--color-teal);">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+                autocomplete="name"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span style="color: var(--color-teal);">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                autocomplete="email"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="organisation">Organisation</label>
+              <input
+                type="text"
+                id="organisation"
+                name="organisation"
+                placeholder="Company or organisation name (optional)"
+                autocomplete="organization"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span style="color: var(--color-teal);">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Describe your project or enquiry — include location, scale, timeline, and any specific requirements."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Honeypot field to reduce spam -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <button type="submit" class="btn-primary" style="align-self: flex-start;">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info Panel -->
+        <aside class="reveal" aria-label="Contact information">
+          <div class="contact-info-panel">
+            <h3>Contact Information</h3>
+
+            <div class="contact-info-item">
+              <svg class="contact-info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <strong>Location</strong>
+                <span>Ireland</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <svg class="contact-info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <div>
+                <strong>Email</strong>
+                <span>conor@boynegeospatial.ie</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <svg class="contact-info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div>
+                <strong>Response Time</strong>
+                <span>Within one working day</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+              <p style="font-size: 0.85rem; color: var(--color-muted); line-height: 1.7;">
+                We work with clients across Ireland and internationally. Whether you have a
+                small mapping requirement or a large spatial data project, we'd be glad to help.
+              </p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <a href="index.html" aria-label="Boyne Geospatial home">
+            <img src="BOYNE (1).png" alt="Boyne Geospatial">
+          </a>
+          <p>Professional GIS consultancy delivering precision mapping and spatial analysis across Ireland.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Navigation</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul role="list">
+            <li>Ireland</li>
+            <li>conor@boynegeospatial.ie</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Boyne Geospatial. All rights reserved.</p>
+        <span>53.7°N 6.5°W</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

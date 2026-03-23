@@ -221,9 +221,10 @@ ul {
 }
 
 .btn-primary:hover {
-  background: var(--color-teal-light);
-  border-color: var(--color-teal-light);
-  box-shadow: 0 0 24px rgba(26, 140, 125, 0.4);
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-bg);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.15);
 }
 
 .btn-outline {
@@ -267,6 +268,12 @@ ul {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.hero-bg.active {
+  opacity: 1;
 }
 
 .hero-bg::after {
@@ -1009,6 +1016,28 @@ ul {
 
 .footer-nav a:hover {
   color: var(--color-text);
+}
+
+.footer-contact a[href^="mailto"] {
+  color: var(--color-teal-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.footer-contact a[href^="mailto"]:hover {
+  color: var(--color-white);
+}
+
+.contact-info-item a[href^="mailto"] {
+  color: var(--color-teal-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.contact-info-item a[href^="mailto"]:hover {
+  color: var(--color-white);
 }
 
 .footer-divider {

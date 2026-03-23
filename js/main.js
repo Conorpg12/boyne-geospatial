@@ -3,6 +3,22 @@
    Vanilla JS only — no libraries
    ============================================================ */
 
+/* ── Hero background alternator ──────────────────────────── */
+(function () {
+  const bgs = document.querySelectorAll('.hero-bg');
+  if (bgs.length < 2) {
+    if (bgs.length === 1) bgs[0].classList.add('active');
+    return;
+  }
+  let current = 0;
+  bgs[0].classList.add('active');
+  setInterval(() => {
+    bgs[current].classList.remove('active');
+    current = (current + 1) % bgs.length;
+    bgs[current].classList.add('active');
+  }, 6000);
+}());
+
 // ── Scroll-triggered reveal ───────────────────────────────────
 const revealObserver = new IntersectionObserver(
   (entries) => {

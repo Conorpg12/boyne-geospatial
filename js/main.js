@@ -123,3 +123,42 @@ function closeEmbed() {
 // Expose to global scope for onclick handlers
 window.launchTool  = launchTool;
 window.closeEmbed  = closeEmbed;
+
+/* ── Field Slideshow ──────────────────────────────────────── */
+(function () {
+  const slideshow = document.querySelector('.field-slideshow');
+  if (!slideshow) return;
+
+  const slides   = Array.from(slideshow.querySelectorAll('.slide'));
+  const dotsWrap = slideshow.querySelector('.slideshow-dots');
+  let current    = 0;
+  let timer;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dotsWrap.children[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsWrap.children[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+
+  function start() { timer = setInterval(next, 4000); }
+  function stop()  { clearInterval(timer); }
+
+  // Pause on hover
+  slideshow.addEventListener('mouseenter', stop);
+  slideshow.addEventListener('mouseleave', start);
+
+  start();
+}());

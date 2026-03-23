@@ -176,5 +176,17 @@ window.closeEmbed  = closeEmbed;
   slideshow.addEventListener('mouseenter', stop);
   slideshow.addEventListener('mouseleave', start);
 
+  // Swipe support for mobile
+  let touchStartX = 0;
+  slideshow.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+    stop();
+  }, { passive: true });
+  slideshow.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    start();
+  }, { passive: true });
+
   start();
 }());

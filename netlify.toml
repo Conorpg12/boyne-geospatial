@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "https://boynegeospatial.ie/*"
+  to = "https://www.boynegeospatial.ie/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://boynegeospatial.ie/*"
+  to = "https://www.boynegeospatial.ie/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.boynegeospatial.ie/*"
+  to = "https://www.boynegeospatial.ie/:splat"
+  status = 301
+  force = true

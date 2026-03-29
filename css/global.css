@@ -195,7 +195,7 @@ ul {
   margin-left: 0.5rem;
 }
 
-/* ── Nav Dropdown ─────────────────────────────────────────── */
+/* -- Nav Dropdown ------------------------------------------- */
 .nav-dropdown {
   position: relative;
 }
@@ -1266,12 +1266,12 @@ ul {
   background: var(--color-teal);
 }
 
-/* ── Full-width service card variant ── */
+/* -- Full-width service card variant -- */
 .service-detail-card--full {
   grid-column: 1 / -1;
 }
 
-/* ── Drone Gallery (inside UAV service card) ── */
+/* -- Drone Gallery (inside UAV service card) -- */
 .drone-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

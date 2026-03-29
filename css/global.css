@@ -195,6 +195,51 @@ ul {
   margin-left: 0.5rem;
 }
 
+/* ── Nav Dropdown ─────────────────────────────────────────── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  list-style: none;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.dropdown-open .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-dropdown-menu li a::after {
+  display: none;
+}
+
+.nav-dropdown-menu li a:hover {
+  background: var(--color-border);
+  color: var(--color-teal-light);
+}
+
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -426,6 +471,16 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
+}
+
+.services-grid--6 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .services-grid--6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .service-card {
@@ -841,6 +896,26 @@ ul {
 /* ============================================================
    About Page
    ============================================================ */
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.about-gallery img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+  .about-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 .about-overview {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1263,6 +1338,7 @@ ul {
   .nav-hamburger { display: flex; }
 
   .services-grid { grid-template-columns: 1fr; }
+  .services-grid--6 { grid-template-columns: 1fr; }
   .services-detail-grid { grid-template-columns: 1fr; }
   .about-teaser { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-overview { grid-template-columns: 1fr; gap: 2.5rem; }

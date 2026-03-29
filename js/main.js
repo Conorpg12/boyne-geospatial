@@ -1,9 +1,9 @@
 /* ============================================================
-   Boyne Geospatial — main.js
-   Vanilla JS only — no libraries
+   Boyne Geospatial - main.js
+   Vanilla JS only - no libraries
    ============================================================ */
 
-/* ── Hero background alternator ──────────────────────────── */
+/* -- Hero background alternator ---------------------------- */
 (function () {
   const bgs = document.querySelectorAll('.hero-bg');
   if (bgs.length < 2) {
@@ -19,7 +19,7 @@
   }, 6000);
 }());
 
-// ── Scroll-triggered reveal ───────────────────────────────────
+// -- Scroll-triggered reveal -----------------------------------
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -36,7 +36,7 @@ document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => {
   revealObserver.observe(el);
 });
 
-// ── Nav: add .scrolled class on scroll ────────────────────────
+// -- Nav: add .scrolled class on scroll ------------------------
 const nav = document.querySelector('.nav');
 if (nav) {
   const onScroll = () => {
@@ -46,7 +46,7 @@ if (nav) {
   onScroll();
 }
 
-// ── Nav: active link highlight ────────────────────────────────
+// -- Nav: active link highlight --------------------------------
 const navLinks = document.querySelectorAll('.nav-links a[href]');
 const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 navLinks.forEach((link) => {
@@ -56,7 +56,7 @@ navLinks.forEach((link) => {
   }
 });
 
-// ── Mobile nav hamburger ──────────────────────────────────────
+// -- Mobile nav hamburger --------------------------------------
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinksEl = document.querySelector('.nav-links');
 
@@ -90,7 +90,7 @@ if (hamburger && navLinksEl) {
   });
 }
 
-// ── Tool embed launcher ───────────────────────────────────────
+// -- Tool embed launcher ---------------------------------------
 /**
  * Called by the "Launch Tool" button on tools.html.
  * @param {HTMLButtonElement} btn
@@ -100,7 +100,7 @@ function launchTool(btn) {
   const url  = card ? card.getAttribute('data-embed') : null;
 
   if (!url || url === 'YOUR_URL_HERE') {
-    alert('This tool is coming soon — URL not yet configured.');
+    alert('This tool is coming soon - URL not yet configured.');
     return;
   }
 
@@ -140,7 +140,29 @@ function closeEmbed() {
 window.launchTool  = launchTool;
 window.closeEmbed  = closeEmbed;
 
-/* ── Field Slideshow ──────────────────────────────────────── */
+// -- Nav dropdown: click/tap toggle for mobile -----------------
+document.querySelectorAll('.nav-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var li = this.parentElement;
+    if (window.innerWidth < 900) {
+      e.preventDefault();
+      li.classList.toggle('dropdown-open');
+      document.querySelectorAll('.nav-dropdown').forEach(function(other) {
+        if (other !== li) other.classList.remove('dropdown-open');
+      });
+    }
+  });
+});
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-dropdown')) {
+    document.querySelectorAll('.nav-dropdown').forEach(function(li) {
+      li.classList.remove('dropdown-open');
+    });
+  }
+});
+
+/* -- Field Slideshow ---------------------------------------- */
 (function () {
   const slideshow = document.querySelector('.field-slideshow');
   if (!slideshow) return;

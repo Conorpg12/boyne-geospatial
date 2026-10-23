@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spatial Tools | Boyne Geospatial</title>
-  <meta name="description" content="Free browser-based tools from Boyne Geospatial. Inspect GeoPackage files, view spatial data, and more - no software installation required.">
+  <title>Free GIS Tools Online | GeoPackage Viewer &amp; More | Boyne Geospatial</title>
+  <meta name="description" content="Free browser-based GIS tools for spatial professionals. Inspect GeoPackage files, view spatial data, and more - no software installation required.">
   <link rel="canonical" href="https://www.boynegeospatial.ie/tools">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
 
-  <!-- -- Navigation ------------------------------------------- -->
+  <!-- ── Navigation ─────────────────────────────────────────── -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="Boyne Geospatial home">
         <img src="logo.png" alt="Boyne Geospatial">
       </a>
-                  <ul class="nav-links" role="list">
+      <ul class="nav-links" role="list">
         <li><a href="/">Home</a></li>
-        <li class="nav-dropdown"><a href="/services">Services</a><ul class="nav-dropdown-menu"><li><a href="/services/new-homes">New Homes &amp; Property</a></li><li><a href="/services/sports-clubs">Sports Clubs &amp; Events</a></li><li><a href="/services/athlete-content">Athlete Content</a></li><li><a href="/services/workplace">Workplace &amp; Engagement</a></li><li><a href="/services/progress-documentation">Progress &amp; Development</a></li><li><a href="/services/stories-place">Stories &amp; Place</a></li></ul></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/tools">Tools</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact" class="btn-primary">Contact</a></li>
@@ -30,19 +31,19 @@
     </div>
   </nav>
 
-  <!-- -- Page Hero ------------------------------------------- -->
+  <!-- ── Page Hero ─────────────────────────────────────────── -->
   <header class="page-hero">
     <div class="container">
       <span class="page-hero-label">Free to Use</span>
       <h1 class="page-hero-title">Spatial Tools</h1>
       <p class="page-hero-sub">
-        Browser-based tools you can open and use directly.
-        No installation, no sign-up required.
+        Browser-based GIS utilities built for spatial professionals.
+        No installation, no sign-up - just open and use.
       </p>
     </div>
   </header>
 
-  <!-- -- Tools Grid ------------------------------------------ -->
+  <!-- ── Tools Grid ────────────────────────────────────────── -->
   <section class="section" aria-labelledby="tools-heading">
     <div class="container">
       <h2 class="section-title reveal" id="tools-heading">Available Tools</h2>
@@ -61,7 +62,7 @@
       -->
       <div class="tools-grid reveal-stagger">
 
-        <!-- -- Tool: GeoPackage Viewer ----------------------- -->
+        <!-- ── Tool: GeoPackage Viewer ─────────────────────── -->
         <div class="tool-card" data-embed="https://conorpg12.github.io/GeopackageViewer/">
           <div class="tool-thumb">
             <svg class="tool-thumb-placeholder" width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -74,17 +75,17 @@
           </div>
           <div class="tool-info">
             <div class="tool-tags">
-              <span class="tool-tag">Spatial</span>
+              <span class="tool-tag">GIS</span>
               <span class="tool-tag">Data</span>
               <span class="tool-tag">Viewer</span>
             </div>
             <h3>GeoPackage Viewer</h3>
             <p>
               Upload and inspect GeoPackage (.gpkg) files directly in your browser.
-              View layers, attributes, and geometry - no desktop software needed.
+              View layers, attributes, and geometry - no desktop GIS software needed.
             </p>
             <p style="color: var(--color-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.7;">
-              A GeoPackage (.gpkg) is an open, standards-based format for storing and transferring spatial data - used by professionals working with QGIS, ArcGIS, and field data collection tools. This browser-based viewer lets you inspect the contents of any .gpkg file without installing any software. Simply upload your file to view layers, attributes, and geometry types instantly.
+              A GeoPackage (.gpkg) is an open, standards-based format for storing and transferring geospatial data - used by GIS professionals working with QGIS, ArcGIS, and field data collection tools. This browser-based viewer lets you inspect the contents of any .gpkg file without installing any software. Simply upload your file to view layers, attributes, and geometry types instantly. Useful for quickly validating data before import, sharing files with non-GIS colleagues, or checking outputs on the go.
             </p>
             <button class="btn-launch" onclick="launchTool(this)" aria-label="Launch GeoPackage Viewer">
               ▶ &nbsp;Launch Tool
@@ -92,7 +93,7 @@
           </div>
         </div>
 
-        <!-- -- Placeholder: Next Tool ------------------------ -->
+        <!-- ── Placeholder: Next Tool ──────────────────────── -->
         <!-- To add your next tool: replace data-embed, title, description, and tags below -->
         <div class="tool-card" data-embed="">
           <div class="tool-thumb">
@@ -118,7 +119,7 @@
 
       </div><!-- /.tools-grid -->
 
-      <!-- -- Tool Embed Container ---------------------------- -->
+      <!-- ── Tool Embed Container ──────────────────────────── -->
       <div class="tool-embed-container" id="tool-embed-container" role="region" aria-live="polite">
         <div class="tool-embed-header">
           <span class="tool-embed-title" id="tool-embed-title">Tool</span>
@@ -128,7 +129,7 @@
           id="tool-iframe"
           src=""
           allow="fullscreen"
-          title="Embedded tool"
+          title="Embedded GIS tool"
           loading="lazy"
         ></iframe>
       </div>
@@ -136,20 +137,20 @@
     </div>
   </section>
 
-  <!-- -- CTA Banner ------------------------------------------ -->
+  <!-- ── CTA Banner ────────────────────────────────────────── -->
   <section class="cta-banner" aria-labelledby="tools-cta">
     <div class="container">
       <span class="section-label section-label-gold reveal">Suggest a Tool</span>
       <h2 class="section-title reveal" id="tools-cta">Need a Specific Tool?</h2>
       <p class="reveal">
-        If there's a tool you'd find useful, let us know.
-        We're always working on new things.
+        If there's a spatial workflow you'd like to see automated, let us know.
+        We're always building new utilities for the GIS community.
       </p>
       <a href="/contact" class="btn-primary reveal">Get in Touch</a>
     </div>
   </section>
 
-  <!-- -- Footer ---------------------------------------------- -->
+  <!-- ── Footer ────────────────────────────────────────────── -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-top">
@@ -157,15 +158,16 @@
           <a href="/" aria-label="Boyne Geospatial home">
             <img src="logo.png" alt="Boyne Geospatial">
           </a>
-          <p>Drone and camera storytelling rooted in the Boyne Valley and across Ireland.</p>
+          <p>Professional GIS consultancy delivering precision mapping and spatial analysis across Ireland.</p>
         </div>
-                <nav class="footer-nav" aria-label="Footer navigation">
+        <nav class="footer-nav" aria-label="Footer navigation">
           <h4>Navigation</h4>
           <ul role="list">
             <li><a href="/">Home</a></li>
             <li><a href="/services">Services</a></li>
+            <li><a href="/tools">Tools</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li><a href="/about">About</a></li>
+        <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIS Projects | Maps, Analysis &amp; Aerial Imagery | Boyne Geospatial</title>
+  <meta name="description" content="Mini GIS projects by Conor Gleeson: maps, open data analysis and drone imagery.">
+  <link rel="canonical" href="https://www.boynegeospatial.ie/projects">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Boyne Geospatial home">
+        <img src="logo.png" alt="Boyne Geospatial">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/tools">Tools</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact" class="btn-primary">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ─────────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="container">
+      <span class="page-hero-label">Mini Projects</span>
+      <h1 class="page-hero-title">Projects</h1>
+      <p class="page-hero-sub">
+        Maps, analysis and drone imagery, with a short write-up on each.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Projects Grid ─────────────────────────────────────── -->
+  <section class="section" aria-labelledby="projects-heading">
+    <div class="container">
+
+      <!--
+        TO ADD A PROJECT:
+        1. Copy the commented .tool-card template below into .tools-grid
+        2. Add a 16:9 thumbnail to images/projects/ (under 400KB)
+        3. Update the tags, title, description and link
+        4. Delete the "First Projects Coming Soon" card once you have one
+
+        <div class="tool-card">
+          <div class="tool-thumb">
+            <img src="images/projects/project-name.jpg" alt="Describe the map or image" loading="lazy">
+          </div>
+          <div class="tool-info">
+            <div class="tool-tags">
+              <span class="tool-tag">Cartography</span>
+              <span class="tool-tag">Open Data</span>
+            </div>
+            <h3>Project Title</h3>
+            <p>One or two sentences on what the project is and what you learned.</p>
+            <a href="LINK_TO_PROJECT" class="btn-launch">View Project</a>
+          </div>
+        </div>
+      -->
+      <h2 class="sr-only" id="projects-heading">All Projects</h2>
+      <div class="tools-grid reveal-stagger">
+
+        <!-- ── Placeholder: remove once the first project is added ── -->
+        <div class="tool-card">
+          <div class="tool-thumb">
+            <svg class="tool-thumb-placeholder" width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="4" width="40" height="40" rx="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M4 16h40M4 32h40M16 4v40M32 4v40" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="24" cy="24" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="tool-info">
+            <div class="tool-tags">
+              <span class="tool-tag">Coming Soon</span>
+            </div>
+            <h3>First Projects Coming Soon</h3>
+            <p>
+              The first projects will be posted here soon.
+            </p>
+            <a href="/tools" class="btn-launch">Try the Free Tools</a>
+          </div>
+        </div>
+
+      </div><!-- /.tools-grid -->
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <a href="/" aria-label="Boyne Geospatial home">
+            <img src="logo.png" alt="Boyne Geospatial">
+          </a>
+          <p>Independent GIS projects, maps and free tools from Navan, Co. Meath.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Navigation</h4>
+          <ul role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/tools">Tools</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul role="list">
+            <li>Navan, County Meath, Ireland</li>
+            <li><a href="mailto:conor@boynegeospatial.ie">conor@boynegeospatial.ie</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Boyne Geospatial. All rights reserved.</p>
+        <span>53.7°N 6.5°W &nbsp;·&nbsp; Navan, Co. Meath, Ireland</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

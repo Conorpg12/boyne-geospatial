@@ -1,9 +1,20 @@
 # Boyne Geospatial — Website Project
 
 ## About
-Boyne Geospatial is a professional GIS consultancy based in Ireland. The website is a
-visually striking, corporate site targeting clients in government, environmental,
-infrastructure, and land development sectors.
+Boyne Geospatial is the independent GIS studio of Conor Gleeson, based in Navan, Co. Meath.
+The website is a visually striking personal GIS portfolio: it showcases mini projects and
+free browser-based tools, and offers a small amount of independent work (map design,
+GIS data support, drone imagery) to small businesses, clubs, community groups and individuals.
+
+### Conflict of interest - IMPORTANT
+Conor works full-time as a GIS Technician for a local authority. The site must never
+conflict with that role:
+- Never offer or mention planning applications, appeals, objections, planning constraint
+  mapping, site suitability / zoning / development feasibility, or development progress work
+- Never target government, local authority, infrastructure or land-development clients
+- Never name the employer on the site
+- Keep the "What I Don't Take On" note (services.html#scope) and the contact page link to it
+- Avoid the word "consultancy"; write in first person ("I"), not "we"
 
 ## Project Stack
 - **Pure HTML, CSS, and vanilla JavaScript only** — no frameworks, no build tools, no npm
@@ -15,7 +26,8 @@ infrastructure, and land development sectors.
 ```
 Website/
 ├── index.html          # Home page
-├── services.html       # GIS services
+├── projects.html       # Mini project portfolio (card grid)
+├── services.html       # "Work With Me" - services + "What I Don't Take On"
 ├── tools.html          # Interactive tools showcase
 ├── about.html          # About the consultancy
 ├── contact.html        # Contact form
@@ -37,7 +49,7 @@ Website/
 ### Identity
 - **Company name**: Boyne Geospatial
 - **Tagline**: "Precision Mapping. Actionable Insight."
-- **Tone**: Authoritative, precise, trusted — not flashy or consumer-facing
+- **Tone**: Precise, knowledgeable, approachable and personal - first person, not corporate
 
 ### Visual Direction
 **Refined dark luxury** — deep navy backgrounds with teal and gold accents.
@@ -91,22 +103,26 @@ both the precision of GIS and the craft of visual communication.
 ## Pages & Content
 
 ### Home (`index.html`)
-- **Hero**: Full viewport, dark background with subtle animated SVG coordinate grid.
-  Large display heading: "Precision Mapping." on one line, "Actionable Insight." on next.
-  Subheading in muted text. Two CTAs: "Our Services" (teal filled) + "View Tools" (outlined)
-- **Services strip**: 3 icon cards — GIS Mapping, Spatial Analysis, Map Production
-- **About teaser**: Left image (fieldwork photo placeholder), right text block
-- **Tools preview**: 2–3 tool cards linking to tools.html
-- **CTA banner**: Full-width teal-tinted section — "Ready to start a project?"
-- **Footer**: Logo, nav links, location (Ireland), email placeholder
+- **Hero**: Full viewport, rotating drone photo backgrounds with subtle animated SVG grid.
+  Large display heading: "Precision Mapping" on one line, "Actionable Insight" on next.
+  Subheading in muted text. Two CTAs: "View Projects" (teal filled) + "Free Tools" (outlined)
+- **"What I Work On" strip**: 3 icon cards - Map Design & Cartography, Spatial Analysis & Data, Drone Imagery
+- **About teaser**: Left image, right text block
+- **Tools preview**: 2-3 tool cards linking to tools.html
+- **CTA banner**: "Have an Idea or a Map in Mind?"
+- **Footer**: Logo, nav links, location (Navan, Co. Meath), email
 
-### Services (`services.html`)
-Core service: **GIS Mapping & Analysis**
-- Topographic and thematic mapping
-- Spatial data collection, processing, and analysis
-- Custom map production (print and web)
-- Site suitability and land-use analysis
-- Infrastructure and utilities mapping
+### Projects (`projects.html`)
+- Grid of mini project cards (reuses `.tools-grid` / `.tool-card` styles)
+- Add a project by copying the commented card template at the top of the grid
+- Thumbnails go in `images/projects/` (16:9, under 400KB)
+
+### Services (`services.html`) - "Work With Me"
+- Map Design & Cartography (thematic maps, prints, route/event maps, publication graphics)
+- Spatial Analysis & Data (data cleaning/conversion, open data, Python/QGIS automation, simple web maps)
+- Drone Imagery (landscape/heritage, club/community/event content, prints, small orthomosaics)
+- Drone photo slideshow (drone-01 to drone-24)
+- "What I Don't Take On" scope note (`#scope`) - see Conflict of interest above
 
 ### Tools (`tools.html`)
 Interactive GIS tools built in Claude.ai, embedded for public use.
@@ -142,7 +158,7 @@ Interactive GIS tools built in Claude.ai, embedded for public use.
 
 ### About (`about.html`)
 - Hero: title + tagline
-- Consultancy overview — based in Ireland, national and international work
+- Founder bio (Conor Gleeson) and the Boyne Valley connection - independent side practice
 - **Photo gallery**: CSS Grid gallery of fieldwork/project images
   - Use `<img src="images/fieldwork/photo.jpg" alt="descriptive text">`
   - Grid layout: 3 columns desktop, 2 tablet, 1 mobile

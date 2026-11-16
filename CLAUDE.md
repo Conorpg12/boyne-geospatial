@@ -1,212 +1,74 @@
-# Boyne Geospatial — Website Project
+# Boyne Geospatial - Website Project
 
 ## About
-Boyne Geospatial is the independent GIS studio of Conor Gleeson, based in Navan, Co. Meath.
-The website is a visually striking personal GIS portfolio: it showcases mini projects and
-free browser-based tools, and offers a small amount of independent work (map design,
-GIS data support, drone imagery) to small businesses, clubs, community groups and individuals.
+boynegeospatial.ie is Conor Gleeson's GIS portfolio: a place to publish his own projects,
+web maps and small browser-based tools. It is based in Navan, Co. Meath.
 
-### Conflict of interest - IMPORTANT
-Conor works full-time as a GIS Technician for a local authority. The site must never
-conflict with that role:
-- Never offer or mention planning applications, appeals, objections, planning constraint
-  mapping, site suitability / zoning / development feasibility, or development progress work
-- Never target government, local authority, infrastructure or land-development clients
-- Never name the employer on the site
-- Keep the "What I Don't Take On" note (services.html#scope) and the contact page link to it
-- Avoid the word "consultancy"; write in first person ("I"), not "we"
+### What the site must not do - IMPORTANT
+- It is a portfolio, not a business site. Never advertise services, consultancy, pricing,
+  "hire me" or "work with me". A low-key "Get in touch" is fine.
+- Never list employer projects or employer data, and never name an employer.
+- Never use third-party logos or crests (parkrun, GAA, race organisers, etc.).
+- Never add analytics, tracking or cookies without asking Conor first.
+- No phone number anywhere on the site.
+- Conor's name appears on the About page only, not on the home page.
 
-## Project Stack
-- **Pure HTML, CSS, and vanilla JavaScript only** — no frameworks, no build tools, no npm
-- **No dependencies** except Google Fonts (loaded via `<link>` tag)
-- **Deploy anywhere** — drag the folder to Netlify, GitHub Pages, or any web host
-- Each page is a standalone `.html` file
+## Stack
+- **Plain HTML, CSS and vanilla JavaScript.** No frameworks, no build step, no npm.
+- Hosted on GitHub Pages from the `master` branch of `Conorpg12/boyne-geospatial`.
+  Pushing to `master` publishes the live site.
+- Custom domain www.boynegeospatial.ie. Never edit, rename or delete the `CNAME` file.
+- Only outside dependency is Google Fonts.
+- If Conor starts publishing blog posts or tutorials regularly, the plan is to move to
+  Jekyll then. Don't introduce it before he asks.
 
-## Project Structure
+## Structure
 ```
-Website/
-├── index.html          # Home page
-├── projects.html       # Mini project portfolio (card grid)
-├── services.html       # "Work With Me" - services + "What I Don't Take On"
-├── tools.html          # Interactive tools showcase
-├── about.html          # About the consultancy
-├── contact.html        # Contact form
-├── css/
-│   ├── global.css      # CSS variables, reset, typography, shared styles
-│   └── animations.css  # All keyframe animations and transitions
-├── js/
-│   └── main.js         # Scroll animations, nav behaviour, interactions
-├── images/
-│   ├── hero/           # Hero/banner images (landscape, min 1600px wide)
-│   ├── about/          # Team and fieldwork photos
-│   ├── fieldwork/      # Site photography
-│   └── tools/          # Tool preview thumbnails
-└── CLAUDE.md
+index.html        Home: positioning line, featured projects, short about
+projects.html     Project cards, tag filter, embedded project panel
+about.html        Bio, skills, tools
+contact.html      Email shown as text with a copy button. No form.
+404.html          Also forwards old /services/..., /tools... and /blog addresses to /projects
+services.html     Redirect stub to /projects (old page removed)
+tools.html        Redirect stub to /projects (tools now live on Projects)
+css/site.css      The only stylesheet. Light and dark themes via CSS variables.
+js/theme.js       Applies a saved light/dark choice before paint (loaded in <head>)
+js/main.js        Theme toggle, mobile nav, tag filter, embed panel, copy email, 404 forwards
+images/           Original photos (large, not referenced by pages - keep them)
+images/web/       Compressed copies that pages actually use (under 400 KB each)
+logo.png          Logo for light backgrounds
+logo-dark.png     Logo with light lettering, for dark backgrounds
+sitemap.xml       Hand-maintained: update when a page is added or removed
+CONTENT-GUIDE.md  How Conor adds a project
 ```
 
-## Brand & Design Guidelines
+## How projects work
+Each project (web map, tool, dashboard) lives in its own GitHub repo with its own GitHub
+Pages address, e.g. `https://conorpg12.github.io/GeopackageViewer/`. The site embeds it:
+a card on `projects.html` has a Launch button with `data-embed="URL"`, which opens the
+project in the iframe panel on the same page. Adding a project means adding a card.
+See `CONTENT-GUIDE.md` for the card template.
 
-### Identity
-- **Company name**: Boyne Geospatial
-- **Tagline**: "Precision Mapping. Actionable Insight."
-- **Tone**: Precise, knowledgeable, approachable and personal - first person, not corporate
+## Conventions
+- Internal links are root-relative clean URLs: `/projects`, `/about`, `/css/site.css`.
+- The nav and footer are repeated in every HTML file. Keep them identical across pages.
+- No inline styles. All styling goes in `css/site.css` using the CSS variables at the top.
+- Every colour must work in both themes: use the variables, never hard-coded colours.
+- Write in first person singular ("I"), in plain language.
+- Every page needs a unique `<title>`, meta description, canonical link and Open Graph tags.
+- Images: descriptive alt text, `width` and `height` attributes, `loading="lazy"` below
+  the fold, and a compressed copy in `images/web/`.
+- Keep it accessible: visible focus states, semantic headings, good contrast in both themes.
 
-### Visual Direction
-**Refined dark luxury** — deep navy backgrounds with teal and gold accents.
-Think: a high-end cartography atlas meets a modern tech consultancy.
-The site should feel like it was designed by someone who truly understands
-both the precision of GIS and the craft of visual communication.
+## Brand
+- Name: Boyne Geospatial
+- Fonts: Cormorant Garamond (headings), Outfit (body), JetBrains Mono (labels, coordinates)
+- Colours: teal and gold accents. Dark theme is deep navy; light theme is warm off-white.
+  The exact values are the variables at the top of `css/site.css`.
+- Feel: a clean, modern map-maker's portfolio. Strong typography, whitespace, a faint map
+  grid behind page headers.
 
-### Colour Palette (CSS variables)
-```css
---color-bg:        #080E1A;   /* Near-black navy — primary background */
---color-surface:   #0F1E35;   /* Slightly lighter navy — cards, sections */
---color-border:    #1A3050;   /* Subtle borders */
---color-teal:      #1A8C7D;   /* Primary accent — CTAs, highlights */
---color-teal-light:#22B5A3;   /* Hover state for teal */
---color-gold:      #C9A84C;   /* Secondary accent — special callouts */
---color-text:      #E8EDF5;   /* Primary text */
---color-muted:     #7A8BA0;   /* Secondary/muted text */
---color-white:     #FFFFFF;
-```
-
-### Typography
-```css
-/* Load via Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap');
-
---font-display: 'Cormorant Garamond', serif;   /* Hero headings — elegant, editorial */
---font-body:    'Outfit', sans-serif;           /* Body text — clean, modern */
---font-mono:    'JetBrains Mono', monospace;    /* Data, coordinates, code labels */
-```
-
-### Design Principles
-- Dark backgrounds throughout — this is a **dark theme site**
-- Hero sections use full-viewport height with animated elements
-- Subtle animated SVG map grid or coordinate lines in hero backgrounds
-- Smooth scroll-triggered fade-in animations for sections
-- Teal glows on hover states (box-shadow with teal colour)
-- Gold accents sparingly — used only for key callouts and special headings
-- Thin 1px teal borders on cards instead of heavy shadows
-- Navigation: fixed top bar, semi-transparent with backdrop-filter blur
-- All pages share the same nav and footer via consistent HTML structure
-- Mobile responsive using CSS Grid and Flexbox (no frameworks)
-
-### Animation Style
-- Page load: hero text fades up with staggered delays
-- Scroll: sections fade in and slide up as they enter viewport (IntersectionObserver in main.js)
-- Hover: smooth 0.3s transitions on all interactive elements
-- No jarring or excessive animations — subtle and purposeful only
-
----
-
-## Pages & Content
-
-### Home (`index.html`)
-- **Hero**: Full viewport, rotating drone photo backgrounds with subtle animated SVG grid.
-  Large display heading: "Precision Mapping" on one line, "Actionable Insight" on next.
-  Subheading in muted text. Two CTAs: "View Projects" (teal filled) + "Free Tools" (outlined)
-- **"What I Work On" strip**: 3 icon cards - Map Design & Cartography, Spatial Analysis & Data, Drone Imagery
-- **About teaser**: Left image, right text block
-- **Tools preview**: 2-3 tool cards linking to tools.html
-- **CTA banner**: "Have an Idea or a Map in Mind?"
-- **Footer**: Logo, nav links, location (Navan, Co. Meath), email
-
-### Projects (`projects.html`)
-- Grid of mini project cards (reuses `.tools-grid` / `.tool-card` styles)
-- Add a project by copying the commented card template at the top of the grid
-- Thumbnails go in `images/projects/` (16:9, under 400KB)
-
-### Services (`services.html`) - "Work With Me"
-- Map Design & Cartography (thematic maps, prints, route/event maps, publication graphics)
-- Spatial Analysis & Data (data cleaning/conversion, open data, Python/QGIS automation, simple web maps)
-- Drone Imagery (landscape/heritage, club/community/event content, prints, small orthomosaics)
-- Drone photo slideshow (drone-01 to drone-24)
-- "What I Don't Take On" scope note (`#scope`) - see Conflict of interest above
-
-### Tools (`tools.html`)
-Interactive GIS tools built in Claude.ai, embedded for public use.
-
-**Layout:**
-- Intro paragraph: "Free tools built for spatial professionals"
-- Masonry-style grid of tool cards
-- Each card: title, description, tags, "Launch Tool" button
-- Clicking "Launch Tool" expands an iframe embed below (or opens in lightbox)
-- Tools added by copy-pasting a new card block in the HTML
-
-**Tool card HTML pattern:**
-```html
-<div class="tool-card" data-embed="CLAUDE_ARTIFACT_URL">
-  <div class="tool-thumb">
-    <img src="images/tools/tool-name.png" alt="Tool preview">
-  </div>
-  <div class="tool-info">
-    <span class="tool-tag">GIS</span>
-    <h3>Tool Name</h3>
-    <p>Short description of what this tool does.</p>
-    <button class="btn-launch" onclick="launchTool(this)">Launch Tool</button>
-  </div>
-</div>
-```
-
-**Iframe embed:**
-```html
-<div class="tool-embed-container" style="display:none">
-  <iframe src="" allow="fullscreen" style="width:100%; min-height:650px; border:none;"></iframe>
-</div>
-```
-
-### About (`about.html`)
-- Hero: title + tagline
-- Founder bio (Conor Gleeson) and the Boyne Valley connection - independent side practice
-- **Photo gallery**: CSS Grid gallery of fieldwork/project images
-  - Use `<img src="images/fieldwork/photo.jpg" alt="descriptive text">`
-  - Grid layout: 3 columns desktop, 2 tablet, 1 mobile
-
-### Contact (`contact.html`)
-- Simple form: Name, Email, Organisation, Message, Send button
-- Wire to Formspree: `<form action="https://formspree.io/f/YOUR_ID" method="POST">`
-- Sign up free at formspree.io to get your form ID
-- Include: email address placeholder, Ireland location
-
----
-
-## Photos & Media
-
-### Adding Photos
-Drop photos directly into the relevant folder under `images/`:
-```
-images/hero/          landscape photos, min 1600x900px
-images/fieldwork/     site and project photos for About gallery
-images/tools/         16:9 screenshot thumbnails for tool cards
-```
-
-### In HTML
-```html
-<img src="images/fieldwork/survey-boyne-01.jpg"
-     alt="GIS field survey along the River Boyne corridor"
-     loading="lazy">
-```
-
-- Always write descriptive alt text
-- Add loading="lazy" on all images below the fold
-- Optimise photos before adding — target under 400KB (use squoosh.app)
-- Preferred formats: .jpg for photos, .png for maps/screenshots, .svg for icons
-
----
-
-## Development Notes for Claude
-- No npm, no build step, no frameworks — open index.html in a browser and it works
-- All shared styles go in css/global.css using CSS custom properties
-- JavaScript in js/main.js — use vanilla JS only, no jQuery or libraries
-- Use IntersectionObserver for scroll animations (no libraries needed)
-- Keep each HTML file self-contained with <link> to shared CSS files
-- Forms use Formspree — no backend needed
-- Never use inline styles — CSS classes only
-- Test in browser by simply opening the HTML file (File > Open in browser)
-
-## Deployment (when ready)
-- Zip the entire Website folder
-- Go to netlify.com and drag the zip onto the deploy area
-- Site is live instantly with a free Netlify URL
-- Can connect a custom domain (boynegeospatial.ie) later in Netlify settings
+## Working rules
+- Work on a branch. Don't push to `master` or merge without Conor's approval.
+- Preview locally with a small web server that maps `/projects` to `projects.html`
+  (opening the files directly won't load root-relative CSS).

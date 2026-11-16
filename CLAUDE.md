@@ -11,7 +11,14 @@ web maps and small browser-based tools. It is based in Navan, Co. Meath.
 - Never use third-party logos or crests (parkrun, GAA, race organisers, etc.).
 - Never add analytics, tracking or cookies without asking Conor first.
 - No phone number anywhere on the site.
+- No photo of Conor on the site.
 - Conor's name appears on the About page only, not on the home page.
+
+### Wording - IMPORTANT
+Conor likes the minimalist light/dark layout but dislikes copy that reads as AI-written.
+- Keep copy short, plain and factual, in first person ("I"). No slogans, marketing
+  phrases, rhetorical questions or punchy fragments.
+- Reuse wording already on the site where possible. Don't rewrite existing copy unless asked.
 
 ## Stack
 - **Plain HTML, CSS and vanilla JavaScript.** No frameworks, no build step, no npm.
@@ -26,7 +33,7 @@ web maps and small browser-based tools. It is based in Navan, Co. Meath.
 ```
 index.html        Home: positioning line, featured projects, short about
 projects.html     Project cards, tag filter, embedded project panel
-about.html        Bio, skills, tools
+about.html        Bio, skills, tools. No photo.
 contact.html      Email shown as text with a copy button. No form.
 404.html          Also forwards old /services/..., /tools... and /blog addresses to /projects
 services.html     Redirect stub to /projects (old page removed)

@@ -69,7 +69,9 @@ See `CONTENT-GUIDE.md` for the card template.
 
 ## Brand
 - Name: Boyne Geospatial
-- Fonts: Cormorant Garamond (headings), Outfit (body), JetBrains Mono (labels, coordinates)
+- Fonts: Source Serif 4 (headings, weight 600) and Source Sans 3 (everything else).
+  Conor chose these over thin serif headings, italic gold accents and monospace labels,
+  which he felt looked AI-generated. Don't reintroduce those.
 - Colours: teal and gold accents. Dark theme is deep navy; light theme is warm off-white.
   The exact values are the variables at the top of `css/site.css`.
 - Feel: a clean, modern map-maker's portfolio. Strong typography, whitespace, a faint map

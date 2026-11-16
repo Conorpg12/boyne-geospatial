@@ -19,9 +19,8 @@
   --nav-bg:         rgba(247, 245, 239, 0.9);
   --shadow-glow:    0 8px 28px rgba(20, 32, 46, 0.08);
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Outfit', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body:    'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   --nav-height: 68px;
   --radius:     6px;
@@ -178,32 +177,30 @@ ul {
 .eyebrow {
   display: block;
   margin-bottom: 0.9rem;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-link);
 }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   line-height: 1.12;
   color: var(--color-text);
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
-  font-weight: 300;
-  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .lede {
@@ -401,13 +398,13 @@ h3 {
 }
 
 .hero h1 {
-  font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
 }
 
 .hero h1 em {
   display: block;
-  font-style: italic;
-  color: var(--color-gold);
+  font-style: normal;
+  color: var(--color-muted);
 }
 
 .figure-frame {
@@ -426,9 +423,7 @@ h3 {
 
 .figure-frame figcaption {
   padding: 0.6rem 0.9rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-size: 0.82rem;
   color: var(--color-muted);
 }
 
@@ -521,9 +516,8 @@ h3 {
   padding: 0.15rem 0.55rem;
   border: 1px solid var(--color-border);
   border-radius: 100px;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-muted);
 }
@@ -581,8 +575,7 @@ h3 {
   gap: 1rem;
   padding: 0.6rem 0.9rem;
   border-bottom: 1px solid var(--color-border);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--color-muted);
 }
 
@@ -632,9 +625,8 @@ h3 {
 .contact-label {
   display: block;
   margin-bottom: 0.35rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-muted);
 }

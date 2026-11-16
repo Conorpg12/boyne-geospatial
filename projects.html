@@ -3,140 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIS Projects | Maps, Analysis &amp; Aerial Imagery | Boyne Geospatial</title>
-  <meta name="description" content="Mini GIS projects by Conor Gleeson: maps, open data analysis and drone imagery.">
+  <title>Projects | Boyne Geospatial</title>
+  <meta name="description" content="GIS projects, web maps and free browser-based tools, including a GeoPackage viewer.">
   <link rel="canonical" href="https://www.boynegeospatial.ie/projects">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Boyne Geospatial">
+  <meta property="og:title" content="Projects | Boyne Geospatial">
+  <meta property="og:description" content="GIS projects, web maps and free browser-based tools, including a GeoPackage viewer.">
+  <meta property="og:url" content="https://www.boynegeospatial.ie/projects">
+  <meta property="og:image" content="https://www.boynegeospatial.ie/og-image.jpg">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Outfit:wght@400;500&family=JetBrains+Mono&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/theme.js"></script>
 </head>
 <body>
 
-  <!-- ── Navigation ─────────────────────────────────────────── -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Boyne Geospatial home">
-        <img src="logo.png" alt="Boyne Geospatial">
-      </a>
-      <ul class="nav-links" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/tools">Tools</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact" class="btn-primary">Contact</a></li>
-      </ul>
-      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ── Page Hero ─────────────────────────────────────────── -->
-  <header class="page-hero">
-    <div class="container">
-      <span class="page-hero-label">Mini Projects</span>
-      <h1 class="page-hero-title">Projects</h1>
-      <p class="page-hero-sub">
-        Maps, analysis and drone imagery, with a short write-up on each.
-      </p>
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo" aria-label="Boyne Geospatial home">
+        <img class="logo-on-light" src="/logo.png" alt="Boyne Geospatial" width="1200" height="405">
+        <img class="logo-on-dark" src="/logo-dark.png" alt="Boyne Geospatial" width="480" height="162">
+      </a>
+      <div class="nav-right">
+        <nav aria-label="Main navigation">
+          <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects" aria-current="page">Projects</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="icon-btn theme-toggle" aria-label="Switch theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button type="button" class="icon-btn nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- ── Projects Grid ─────────────────────────────────────── -->
-  <section class="section" aria-labelledby="projects-heading">
-    <div class="container">
-
-      <!--
-        TO ADD A PROJECT:
-        1. Copy the commented .tool-card template below into .tools-grid
-        2. Add a 16:9 thumbnail to images/projects/ (under 400KB)
-        3. Update the tags, title, description and link
-        4. Delete the "First Projects Coming Soon" card once you have one
-
-        <div class="tool-card">
-          <div class="tool-thumb">
-            <img src="images/projects/project-name.jpg" alt="Describe the map or image" loading="lazy">
-          </div>
-          <div class="tool-info">
-            <div class="tool-tags">
-              <span class="tool-tag">Cartography</span>
-              <span class="tool-tag">Open Data</span>
-            </div>
-            <h3>Project Title</h3>
-            <p>One or two sentences on what the project is and what you learned.</p>
-            <a href="LINK_TO_PROJECT" class="btn-launch">View Project</a>
-          </div>
-        </div>
-      -->
-      <h2 class="sr-only" id="projects-heading">All Projects</h2>
-      <div class="tools-grid reveal-stagger">
-
-        <!-- ── Placeholder: remove once the first project is added ── -->
-        <div class="tool-card">
-          <div class="tool-thumb">
-            <svg class="tool-thumb-placeholder" width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="4" y="4" width="40" height="40" rx="4" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M4 16h40M4 32h40M16 4v40M32 4v40" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-              <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="24" cy="24" r="2" fill="currentColor"/>
-            </svg>
-          </div>
-          <div class="tool-info">
-            <div class="tool-tags">
-              <span class="tool-tag">Coming Soon</span>
-            </div>
-            <h3>First Projects Coming Soon</h3>
-            <p>
-              The first projects will be posted here soon.
-            </p>
-            <a href="/tools" class="btn-launch">Try the Free Tools</a>
-          </div>
-        </div>
-
-      </div><!-- /.tools-grid -->
+  <main id="main">
+    <div class="page-head">
+      <div class="container">
+        <span class="eyebrow">Portfolio</span>
+        <h1>Projects</h1>
+        <p class="lede">Web maps, interactive pieces and tools. Launch one to use it on this page.</p>
+      </div>
     </div>
-  </section>
+
+    <section class="section" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 class="sr-only" id="projects-heading">All projects</h2>
+
+        <!-- Tag filter buttons are created automatically from each card's data-tags. -->
+        <div class="filter-bar" role="group" aria-label="Filter projects by tag" hidden></div>
+
+        <!--
+          TO ADD A PROJECT: copy the card below, paste it inside .card-grid and edit it.
+          Full instructions are in CONTENT-GUIDE.md.
+        -->
+        <div class="card-grid">
+
+          <article class="card" data-tags="Tool, Data">
+            <div class="card-thumb">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="6" y="10" width="36" height="28" rx="3"/>
+                <path d="M6 18h36M18 10v8M30 10v8"/>
+                <circle cx="14" cy="28" r="3"/>
+                <path d="M22 28h10M22 32h6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <div class="tag-list">
+                <span class="status">Live</span>
+                <span class="tag">Tool</span>
+                <span class="tag">Data</span>
+              </div>
+              <h3>GeoPackage Viewer</h3>
+              <p>Open a GeoPackage (.gpkg) file in your browser and see its layers, attributes and geometry types. Nothing to install.</p>
+              <div class="card-actions">
+                <button type="button" class="btn btn--primary btn--small" data-embed="https://conorpg12.github.io/GeopackageViewer/">Launch</button>
+                <a class="btn btn--small" href="https://conorpg12.github.io/GeopackageViewer/" target="_blank" rel="noopener">Open in new tab</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- DRAFT (not published): remove the comment markers when it's ready.
+          <article class="card" data-tags="Map, Running">
+            <div class="card-thumb">
+              <img src="/images/web/parkrun-elevation.jpg" width="1280" height="720" loading="lazy"
+                   alt="Describe the map">
+            </div>
+            <div class="card-body">
+              <div class="tag-list">
+                <span class="status">In progress</span>
+                <span class="tag">Map</span>
+                <span class="tag">Running</span>
+              </div>
+              <h3>Mapping the elevation of Ireland's parkrun courses</h3>
+              <p>An unofficial guide. TODO Conor: one or two sentences.</p>
+              <div class="card-actions">
+                <button type="button" class="btn btn--primary btn--small" data-embed="URL_OF_THE_MAP">Launch</button>
+                <a class="btn btn--small" href="URL_OF_THE_MAP" target="_blank" rel="noopener">Open in new tab</a>
+              </div>
+              <p>Data: TODO Conor, list each source and its licence, e.g. &copy; OpenStreetMap contributors</p>
+            </div>
+          </article>
+          -->
+
+        </div>
+
+        <!-- ── Embedded project panel (opened by a card's Launch button) ── -->
+        <div class="embed-panel" id="embed-panel" hidden>
+          <div class="embed-bar">
+            <span class="embed-title">Project</span>
+            <button type="button" class="btn btn--small embed-close">Close</button>
+          </div>
+          <iframe src="about:blank" title="Project" allow="fullscreen" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- ── Footer ────────────────────────────────────────────── -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-logo">
-          <a href="/" aria-label="Boyne Geospatial home">
-            <img src="logo.png" alt="Boyne Geospatial">
-          </a>
-          <p>Independent GIS projects, maps and free tools from Navan, Co. Meath.</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <h4>Navigation</h4>
-          <ul role="list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/tools">Tools</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <ul role="list">
-            <li>Navan, County Meath, Ireland</li>
-            <li><a href="mailto:conor@boynegeospatial.ie">conor@boynegeospatial.ie</a></li>
-          </ul>
-        </div>
-      </div>
-      <hr class="footer-divider">
-      <div class="footer-bottom">
-        <p>&copy; 2026 Boyne Geospatial. All rights reserved.</p>
-        <span>53.7°N 6.5°W &nbsp;·&nbsp; Navan, Co. Meath, Ireland</span>
-      </div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p><span class="footer-name">Boyne Geospatial</span> &nbsp;·&nbsp; Navan, Co. Meath</p>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Boyne Geospatial</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>

@@ -1,192 +1,122 @@
 /* ============================================================
-   Boyne Geospatial — main.js
-   Vanilla JS only — no libraries
+   Boyne Geospatial - main.js
+   Vanilla JS only, no libraries
    ============================================================ */
 
-/* ── Hero background alternator ──────────────────────────── */
+// ── Theme toggle ──────────────────────────────────────────────
 (function () {
-  const bgs = document.querySelectorAll('.hero-bg');
-  if (bgs.length < 2) {
-    if (bgs.length === 1) bgs[0].classList.add('active');
-    return;
+  const btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+  const root = document.documentElement;
+
+  function isDark() {
+    const set = root.getAttribute('data-theme');
+    if (set) return set === 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
-  let current = 0;
-  bgs[0].classList.add('active');
-  setInterval(() => {
-    bgs[current].classList.remove('active');
-    current = (current + 1) % bgs.length;
-    bgs[current].classList.add('active');
-  }, 6000);
+
+  function label() {
+    btn.setAttribute('aria-label', isDark() ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  btn.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) { /* not saved, still applied */ }
+    label();
+  });
+  label();
 }());
 
-// ── Scroll-triggered reveal ───────────────────────────────────
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-);
-
-document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => {
-  revealObserver.observe(el);
-});
-
-// ── Nav: add .scrolled class on scroll ────────────────────────
-const nav = document.querySelector('.nav');
-if (nav) {
-  const onScroll = () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
-
-// ── Nav: active link highlight ────────────────────────────────
-const navLinks = document.querySelectorAll('.nav-links a[href]');
-const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-navLinks.forEach((link) => {
-  const href = link.getAttribute('href');
-  if (href === currentPath || (currentPath === '' && href === 'index.html')) {
-    link.classList.add('active');
-  }
-});
-
-// ── Mobile nav hamburger ──────────────────────────────────────
-const hamburger = document.querySelector('.nav-hamburger');
-const navLinksEl = document.querySelector('.nav-links');
-
-if (hamburger && navLinksEl) {
-  hamburger.addEventListener('click', () => {
-    const isOpen = navLinksEl.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', isOpen);
-
-    // Animate the hamburger into an X
-    const spans = hamburger.querySelectorAll('span');
-    if (isOpen) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity  = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    } else {
-      spans[0].style.transform = '';
-      spans[1].style.opacity  = '';
-      spans[2].style.transform = '';
-    }
-  });
-
-  // Close nav when a link is clicked
-  navLinksEl.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinksEl.classList.remove('open');
-      hamburger.querySelectorAll('span').forEach((s) => {
-        s.style.transform = '';
-        s.style.opacity   = '';
-      });
-    });
-  });
-}
-
-// ── Tool embed launcher ───────────────────────────────────────
-/**
- * Called by the "Launch Tool" button on tools.html.
- * @param {HTMLButtonElement} btn
- */
-function launchTool(btn) {
-  const card = btn.closest('.tool-card');
-  const url  = card ? card.getAttribute('data-embed') : null;
-
-  if (!url || url === 'YOUR_URL_HERE') {
-    alert('This tool is coming soon — URL not yet configured.');
-    return;
-  }
-
-  const container = document.getElementById('tool-embed-container');
-  const iframe    = document.getElementById('tool-iframe');
-  const titleEl   = document.getElementById('tool-embed-title');
-
-  if (!container || !iframe) return;
-
-  // Set the iframe src and show container
-  iframe.src = url;
-  if (titleEl) {
-    titleEl.textContent = card.querySelector('h3')
-      ? '▶  ' + card.querySelector('h3').textContent
-      : '▶  Tool';
-  }
-
-  container.style.display = 'block';
-
-  // Smooth scroll to embed
-  setTimeout(() => {
-    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 80);
-}
-
-/**
- * Close the tool embed.
- */
-function closeEmbed() {
-  const container = document.getElementById('tool-embed-container');
-  const iframe    = document.getElementById('tool-iframe');
-  if (container) container.style.display = 'none';
-  if (iframe)    iframe.src = '';
-}
-
-// Expose to global scope for onclick handlers
-window.launchTool  = launchTool;
-window.closeEmbed  = closeEmbed;
-
-/* ── Field Slideshow ──────────────────────────────────────── */
+// ── Mobile nav ────────────────────────────────────────────────
 (function () {
-  const slideshow = document.querySelector('.field-slideshow');
-  if (!slideshow) return;
+  const toggle = document.querySelector('.nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
 
-  const slides   = Array.from(slideshow.querySelectorAll('.slide'));
-  const dotsWrap = slideshow.querySelector('.slideshow-dots');
-  let current    = 0;
-  let timer;
-
-  // Build dots
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-    dot.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(dot);
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
   });
+}());
 
-  function goTo(index) {
-    slides[current].classList.remove('active');
-    dotsWrap.children[current].classList.remove('active');
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dotsWrap.children[current].classList.add('active');
+// ── Projects: tag filter ──────────────────────────────────────
+// Buttons are built from each card's data-tags, so adding a card is all that's needed.
+(function () {
+  const bar   = document.querySelector('.filter-bar');
+  const cards = Array.from(document.querySelectorAll('.card[data-tags]'));
+  if (!bar || !cards.length) return;
+
+  const tagsOf = (card) => card.dataset.tags.split(',').map((t) => t.trim()).filter(Boolean);
+  const tags = Array.from(new Set(cards.flatMap(tagsOf))).sort();
+  if (tags.length < 2) return;   // nothing worth filtering yet
+
+  function show(tag) {
+    cards.forEach((card) => { card.hidden = tag !== 'All' && !tagsOf(card).includes(tag); });
+    bar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.textContent === tag));
   }
 
-  function next() { goTo(current + 1); }
+  ['All'].concat(tags).forEach((tag) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'filter-btn';
+    b.textContent = tag;
+    b.addEventListener('click', () => show(tag));
+    bar.appendChild(b);
+  });
+  bar.hidden = false;
+  show('All');
+}());
 
-  function start() { timer = setInterval(next, 4000); }
-  function stop()  { clearInterval(timer); }
+// ── Projects: open an embedded project in the panel ───────────
+(function () {
+  const panel = document.getElementById('embed-panel');
+  if (!panel) return;
+  const frame = panel.querySelector('iframe');
+  const title = panel.querySelector('.embed-title');
 
-  // Pause on hover
-  slideshow.addEventListener('mouseenter', stop);
-  slideshow.addEventListener('mouseleave', start);
+  document.querySelectorAll('[data-embed]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.card');
+      const name = card ? card.querySelector('h3').textContent : 'Project';
+      frame.src = btn.dataset.embed;
+      frame.title = name;
+      title.textContent = name;
+      panel.hidden = false;
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 
-  // Swipe support for mobile
-  let touchStartX = 0;
-  slideshow.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].clientX;
-    stop();
-  }, { passive: true });
-  slideshow.addEventListener('touchend', (e) => {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-    start();
-  }, { passive: true });
+  panel.querySelector('.embed-close').addEventListener('click', () => {
+    panel.hidden = true;
+    frame.src = 'about:blank';
+  });
+}());
 
-  start();
+// ── Contact: copy email ───────────────────────────────────────
+(function () {
+  const btn = document.querySelector('[data-copy]');
+  if (!btn) return;
+  const status = document.querySelector('.copy-status');
+
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      status.textContent = 'Copied';
+    } catch (e) {
+      status.textContent = 'Couldn\'t copy. Please select the address and copy it.';
+    }
+    setTimeout(() => { status.textContent = ''; }, 4000);
+  });
+}());
+
+// ── 404: send old addresses to their new home ─────────────────
+// GitHub Pages serves 404.html for any missing address, so retired pages
+// (old service sub-pages, the old blog) are forwarded from here.
+(function () {
+  if (!document.body.hasAttribute('data-not-found')) return;
+  const path = window.location.pathname.toLowerCase();
+  if (/^\/(services|tools|blog)(\/|\.html|$)/.test(path)) {
+    window.location.replace('/projects');
+  }
 }());
